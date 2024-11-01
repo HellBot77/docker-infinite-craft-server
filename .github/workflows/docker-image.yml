@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 env:
-  PLATFORMS: linux/arm64
+  PLATFORMS: linux/arm64,linux/amd64
   SOURCE_REPOSITORY: HellLord77/infinite-craft-data@https://codeberg.org/api/v1
   DOCKERHUB_REPOSITORY: helllord/infinite-craft-server
   DOCKERFILE_REPOSITORY: HellLord77/infinite-craft-server
