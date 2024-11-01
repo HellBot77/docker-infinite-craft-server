@@ -40,7 +40,8 @@ jobs:
           repository: ${{ env.DOCKERFILE_REPOSITORY }}
       - name: Download data
         run: |
-          git clone --depth 1 --branch ${{ needs.get-tag.outputs.tag }} https://codeberg.org/HellLord77/infinite-craft-data.git data
+          mkdir data
+          curl https://codeberg.org/HellLord77/infinite-craft-data/archive/${{ needs.get-tag.outputs.tag }}.tar.gz | tar xz -C data --strip-components=1
       - name: Set Docker Hub username
         id: dockerhub-username
         run: echo "username=${DOCKERHUB_REPOSITORY%%/*}" >> $GITHUB_OUTPUT
